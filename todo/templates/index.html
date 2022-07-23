@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>My Flask To-Do</title>
+</head>
+
+<body>
+    <header>
+        <h1>My Flask To-Do</h1>
+    </header>
+
+    <main>
+        <section>
+            <form action="" method="post">
+                <input type="text" name="task">
+                <input type="submit" value="Add task">
+            </form>
+        </section>
+
+        <section>
+            <ul>
+            {% for task in tasks %}
+                <li>{{ task }}</li>
+            {% endfor %}
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
