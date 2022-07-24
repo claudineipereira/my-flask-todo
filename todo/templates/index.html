@@ -24,7 +24,7 @@
         <section>
             <ul>
             {% for task in tasks %}
-                <li>{{ task }} - <a href="{{ url_for('delete', task=task) }}">X</a></li>
+                <li>{{ task.content }} - <a href="{{ url_for('delete', id=task.id) }}">X</a></li>
             {% endfor %}
             </ul>
         </section>
