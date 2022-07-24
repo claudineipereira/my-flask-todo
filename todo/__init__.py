@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for, redirect
 
 app = Flask(__name__)
 
@@ -12,3 +12,9 @@ def home():
             db.append(task)
             # print(db.index(task))
     return render_template('index.html', tasks=db)
+
+@app.route('/delete/<task>')
+def delete(task):
+    task_idx = db.index(task)
+    db.pop(task_idx)
+    return redirect(url_for('home'))
